@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Help</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+  body {
+  font-size: 13pt;
+  }
+  h1 {
+  font-size: 120%;
+  }
+  h2 {
+  font-size: 110%;
+  }
+  em {
+  font-size: 100%;
+  }
+  p {
+  text-align: justify;
+  }
+  .sml {
+  font-size: 90%;
+  }
+
+  td, th {
+    border: 1px solid black;
+    padding: 4px 10px 4px 10px;
+  }
+
+  #list2 { 
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  #list3 { 
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  #green { color: #204000; }
+  #red {color: #903838; }
+
+</style>
+
+
+</head>
+
+<body>
+<h2>2-D view controls</h2>
+
+<center>
+<table id="list2" >
+<tr><th width="25%" >Key or Mouse input</th><th>Description</th></tr>
+
+<tr>
+<td><tt><b>Q</b></tt></td>
+<td><b>Q</b>uit the progam.</td>
+</tr>
+
+<tr>
+<td><tt> <b>H</b> or <b>S</b> </tt></td>
+<td><b>H</b>istogram (color <b>S</b>cale) view toggle.</td>
+</tr>
+
+<tr>
+<td><tt> <b>A</b></tt></td>
+<td><b>A</b>lign views with main window (2-D view).</td>
+</tr>
+
+<tr>
+<td><tt> <b>Z</b></tt></td>
+<td><b>Z</b>oom in.</td>
+</tr>
+
+<tr>
+<td><tt> <b>X</b></tt></td>
+<td>Zoom out.</td>
+</tr>
+
+<tr>
+<td><tt> <b>R</b></tt></td>
+<td>Toggle ROI display, same as <b>ROI</b> button.</td>
+</tr>
+
+<tr>
+<td><tt> <b>D</b></tt></td>
+<td><b>D</b>ouble size toggle, same as <b>x2</b> button.</td>
+</tr>
+
+<tr>
+<td><tt> <b>C</b></tt></td>
+<td><b>C</b>enter display on cursor position.</td>
+</tr>
+
+<tr>
+<td><tt> <b>Home</b></tt></td>
+<td>Reset zoom level.</td>
+</tr>
+
+<tr>
+<td><tt><b>Ctrl</b> Arrow_<b>&lt;Dir&gt;</b></tt></td>
+<td>Move cursor <b>&lt;Dir&gt;</b> (faster with <tt><b>Shift</b></tt> also pressed).</td>
+</tr>
+
+<tr>
+<td><tt> Arrow_<b>&lt;Dir&gt;</b></tt></td>
+<td>Move through the image series, Down and Right increase the sequence number (faster with <tt><b>Shift</b></tt> also pressed).</td>
+</tr>
+
+<tr>
+<td><tt> Mouse_<b>Wheel</b></tt></td>
+<td>Go through image stack (faster with <tt><b>Shift</b></tt> also pressed).</td>
+</tr>
+
+<tr>
+<td><tt><b>Ctrl</b> Mouse_<b>Wheel</b></tt></td>
+<td>Change zoom level.</td>
+</tr>
+
+<tr>
+<td><tt>Mouse_<b>Click</b></tt></td>
+<td>When on the image display it repositions the cursor (even if not shown). If clicked again in the same spot it centers the image on it (zoom level allowing).</td>
+</tr>
+
+<tr>
+<td><tt> <b>F1</b></tt></td>
+<td>Help view toggle.</td>
+</tr>
+
+</table>
+</center>
+
+<h2>3-D view controls</h2>
+
+<center>
+<table id="list3" >
+<tr><th width="25%" >Key or Mouse input</th><th>Description</th></tr>
+
+<tr>
+<td><tt> Arrow_<b>Left/Right</b></tt></td>
+<td>Rotate along <b>y</b>-axis</td>
+</tr>
+
+<tr>
+<td><tt> Arrow_<b>Up/Down</b></tt></td>
+<td>Rotate along <b>z</b>-axis</td>
+</tr>
+
+<tr>
+<td><tt><b>Shift</b> Arrow_<b>Left/Right</b></tt></td>
+<td>Translate along <b>z</b>-axis.
+</tr>
+
+<tr>
+<td><tt> <b>Z</b></tt></td>
+<td><b>Z</b>oom in.</td>
+</tr>
+
+<tr>
+<td><tt> <b>X</b></tt></td>
+<td>Zoom out.</td>
+</tr>
+
+<tr>
+<td><tt> <b>Home</b></tt></td>
+<td>Reset view.</td>
+</tr>
+
+</table>
+</center>
+
+<h2>Introduction</h2>
+
+<p>You've made it so far as building the program, running it and seeing this page :) Congratulations! Perhaps the visual controls are not self-explanatory but I trust you'll figure them out with a bit of experimentation. There are three other views: </p>
+
+<p>
+<ul>
+<li><b>2-D</b> which is also the main control view</li>
+<li><b>Histogram</b> the image series histogram with intensity scale controls</li>
+<li><b>3-D</b> with a rudimentary visualization of ROI data, if available</li>
+</ul>
+</p>
+
+<p>For the <b>2-D</b> view the controls are show at the top of this page. Since the other views are quite rudimentary, only a brief description is given below.</p>
+
+<p>The <b>Histogram</b> view shows image intensity levels on the <b>Y</b> axis while the gray level values are assigned on the <b>X</b> axis. With the inputs on the vertical area it allows control over which slice of intensities (from minimum to maximum specified) gets linearly mapped into the range of values denoted on the <b>X</b> axis. The intensities below are mapped into a <span id="green"><b>green</b></span> range of colors, more luminous ones corresponding to lower values and transitioning smoothly into the specified black level. For the intensities above the maximum, the mapping goes into the <span id="red"><b>red</b></span> color range, with highest intensities being assigned for the darkest shade. The absolute range of intensities are the fixed numbers on the <b>Y</b> axis. To faster change the numeric spinners, in increments of 10, hold the <b>Ctrl</b> key while rotating the mouse wheel.</p>
+
+<p>The <b>3-D</b> view offers a rudimentary spatial representation of the ROI data. Only keyboard controls are currently available and these are listed in the 2nd table above.</p>
+  
+<p>This program is in an early development stage. For feedback, new functionality or bug reporting please e-mail at x3x7apps@gmail.com. While a response it not guaranteed, I'm usually on my best effort for providing one.</p>
+
+<hr />
+<p>Nov 11, 2014</p>
+<hr />
+
+</body>
+</html>
